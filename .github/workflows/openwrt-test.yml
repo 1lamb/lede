@@ -58,13 +58,16 @@ jobs:
       - name: Generate configuration file
         run: make defconfig
         
-      - name: preferred configuration
-        run: make menuconfig
-
       - name: Make download
         run: |
           make download -j8
           find dl -size -1024c -exec rm -f {} \;
+          
+      - name: SSH
+        shell: bash
+        #run: SSH connection to Actions
+        #env: 
+         # ssh_active: true
 
       - name: Compile firmware
         run: |
