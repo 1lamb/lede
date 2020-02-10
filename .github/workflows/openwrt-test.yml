@@ -58,7 +58,7 @@ jobs:
       - name: Generate configuration file
         run: make defconfig
         
-      - name: 配置菜单
+      - name: preferred configuration
         run: make menuconfig
 
       - name: Make download
