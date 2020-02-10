@@ -15,6 +15,10 @@ on:
   push:
    branches: 
     - master
+
+env:
+  ssh_active: true
+
 jobs:
 
   build:
@@ -58,17 +62,15 @@ jobs:
       - name: Generate configuration file
         run: make defconfig
         
+      - name: SSH connection to Actions
+        uses: 1lambs/debugger-action@master
+        if: env.SSH_ACTIONS == 'true'
+        
       - name: Make download
         run: |
           make download -j8
           find dl -size -1024c -exec rm -f {} \;
           
-      - name: SSH
-        shell: bash
-        #run: SSH connection to Actions
-        #env: 
-         # ssh_active: true
-
       - name: Compile firmware
         run: |
           make -j$(nproc) || make -j1 V=s
