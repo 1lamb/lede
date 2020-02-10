@@ -12,8 +12,8 @@ name: 自编译测试
 on:
   schedule:
     - cron: 0 20 * * *
-push:
-  branches: 
+  push:
+   branches: 
     - master
 jobs:
 
