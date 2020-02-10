@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # 
 
-name: 自编译测试
+name: OpenWRT_X86_64
 
 on:
   #schedule:
