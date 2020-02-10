@@ -7,14 +7,14 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 # 
 
-name: OpenWRT_X86_64
+name: OpenWRT_Custorm
 
 on:
   #schedule:
    # - cron: 0 20 * * *
-  push:
-   branches: 
-    - master
+  #push:
+   #branches: 
+    #- master
 
 jobs:
 
@@ -69,7 +69,7 @@ jobs:
           
       - name: Compile firmware
         run: |
-          make -j$(nproc) || make -j1 V=s
+          make -j$(nproc) || make -j8 V=s
           echo "======================="
           echo "Space usage:"
           echo "======================="
