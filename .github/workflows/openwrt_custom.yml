@@ -45,8 +45,8 @@ jobs:
           
       - name: 同步最新的源码
         run: |
-          git remote add openwrt https://github.com/coolsnowwolf/lede.git
-          git pull openwrt master
+          git remote add lede https://github.com/coolsnowwolf/lede.git
+          git pull lede master
           git remote -v
 
           # 利用挂载在 /mnt/ 的 14G 额外空间:
